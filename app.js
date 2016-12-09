@@ -16,6 +16,8 @@ function sleeplight(ms) {
 
 function main(led) {
   console.log('Taking a break...');
+  led.value(false);
+
   setTimeout(sleeplight, 3000);
 
   led.value(true);
