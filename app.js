@@ -24,7 +24,7 @@ app.get('/on', function (req, res) {
 	led.mode('out');
   	led.value(true);
   	var start = new Date().getTime() / 1000;
-  	var latertime = 10;
+  	var latertime = 5;
   	var leaveon = true
   	while (leaveon) {
   		var now = new Date().getTime() / 1000;
