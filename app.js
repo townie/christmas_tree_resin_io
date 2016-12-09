@@ -14,7 +14,7 @@ function sleeplight(ms) {
 
 }
 
-async function demo(led) {
+function main(led) {
   console.log('Taking a break...');
   setTimeout(sleeplight, 3000);
 
@@ -22,3 +22,5 @@ async function demo(led) {
 
   console.log('Two second later');
 }
+
+main(led);
