@@ -22,5 +22,6 @@ function main(led) {
 
   console.log('Two second later');
 }
-
+while (true) {
 main(led);
+}
