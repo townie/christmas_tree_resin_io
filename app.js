@@ -23,7 +23,19 @@ app.get('/on', function (req, res) {
 	var led = require("pi-pins").connect(22);
 	led.mode('out');
   	led.value(true);
+  	var start = new Date().getTime() / 1000;
+  	var latertime = 10;
+  	var leaveon = true
+  	while (leaveon) {
+  		var now = new Date().getTime() / 1000;
+		if   (now - start >= latertime) {
+			leaveon = false;
+		  	led.value(false);
+
+		}
+	}
   	res.send('on\n');
+
 });
 
 app.get('/off', function (req, res) {
