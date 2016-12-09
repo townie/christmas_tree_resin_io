@@ -9,20 +9,16 @@ led.mode('out');
 led.value(true);
 
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+function sleeplight(ms) {
+   led.value(false);
+
 }
 
 async function demo(led) {
   console.log('Taking a break...');
-  led.value(false);
+  setTimeout(sleeplight, 3000);
 
-  await sleep(2000);
   led.value(true);
 
   console.log('Two second later');
-}
-var times = 10;
-for(var i=0; i < times; i++){
-	demo(led);
 }
