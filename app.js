@@ -12,9 +12,19 @@ ledToggle = false;
 pressCount= 0;
 led.value(true);
 
-//look for a button press event and switch on the LED for 2 seconds when this happens.
-button.on('rise', function () {
-    console.log("button pressed: "+ (++pressCount) +" time(s)");
-    ledToggle = !ledToggle;
-    led.value(ledToggle);
-});
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function demo() {
+  console.log('Taking a break...');
+  led.value(false);
+
+  await sleep(2000);
+  led.value(true);
+
+  console.log('Two second later');
+}
+
+demo();
