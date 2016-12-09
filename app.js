@@ -23,5 +23,7 @@ async function demo(led) {
 
   console.log('Two second later');
 }
-
-demole(led);
+var times = 10;
+for(var i=0; i < times; i++){
+	demo(led);
+}
